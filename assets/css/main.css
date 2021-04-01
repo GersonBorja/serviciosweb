@@ -1,0 +1,169 @@
+/** variables del diseño **/
+:root {
+    --bg-primary: #101519;
+    --bg-banner: #161C21;
+    --line-hover: #FA5E5E;
+    --line-hover-dark: #C84B4B;
+    --text-bg-primary: #F2F2F2;
+    --bg-white: #FFFFFF;
+}
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Barlow', sans-serif;
+}
+
+/** sistema de filas y columnas grid **/
+body {
+    height: 100vh;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+/** scroll animado **/
+html {
+    scroll-behavior: smooth;
+}
+
+/** Header **/
+header {
+    background: var(--bg-primary);
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header h1 {
+    color: var(--text-bg-primary);
+    padding: 1.9rem 1.7rem;
+    font-size: 1.1rem;
+}
+
+/** estilos del nav del menu **/
+header nav ul {
+    list-style: none;
+}
+header nav ul li {
+    display: inline-block;
+}
+header nav ul li a {
+    display: block;
+    padding: 1.9rem 1.7rem;
+    color: var(--text-bg-primary);
+    font-size: 1.1rem;
+    position: relative;
+    transition: all 1s ease;
+    overflow: hidden;
+}
+
+/** linea del hover de las anclas del nav **/
+header nav ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: 1.2rem;
+    left: 1.5rem;
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--line-hover);
+    transition: width .6s ease;
+}
+header nav ul li a:hover:after {
+    width: 70%;
+}
+
+/** diseño del banner principal **/
+.container .ban {
+    background: linear-gradient(45deg, var(--bg-banner) 55%, var(--bg-white));
+}
+.container .ban .banner_centrar {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+.container .ban .banner_centrar .banner_texto {
+    padding: 6rem 4rem;
+}
+.container .ban .banner_centrar .banner_texto h1 {
+    color: var(--text-bg-primary);
+    font-size: 2rem;
+    line-height: 3rem;
+}
+.container .ban .banner_centrar .banner_texto h2 {
+    color: var(--text-bg-primary);
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin: 1rem 0;
+}
+.container .ban .banner_centrar .banner_texto p {
+    color: var(--text-bg-primary);
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+}
+.container .ban .banner_centrar .banner_imagen {
+    padding: 5.9rem 5rem;
+}
+.container .ban .banner_centrar .banner_texto a.banner_boton_solicitud {
+    background: var(--line-hover);
+    color: var(--text-bg-primary);
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: block;
+    padding: 1rem 3rem;
+    width: 60%;
+    text-align: center;
+    margin-top: 2rem;
+    border-radius: 4px;
+    transition: all .5s ease;
+}
+.container .ban .banner_centrar .banner_texto a.banner_boton_solicitud:hover {
+    background: var(--line-hover-dark);
+}
+.container .ban .banner_centrar .banner_imagen img {
+    width: 400px;
+    margin: auto;
+}
+
+/** Diseño del main **/
+
+.container main {
+    padding: 2rem 2rem;
+}
+.container #servicios {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+.container main article h2.titulo {
+    padding: 0 .5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-left: 5px solid var(--bg-primary);
+}
+.container main article {
+    width: 50%;
+    padding: 0 2rem;
+}
+.container main article p {
+    padding: 1rem 0;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+}
+.main-tecnologias {
+    display: flex;
+    padding: 2rem 0;
+}
+.main-tecnologias img {
+    width: 110px;
+    display: inline-block;
+    margin-right: 1rem;
+}
