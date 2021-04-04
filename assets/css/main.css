@@ -2,9 +2,11 @@
 :root {
     --bg-primary: #101519;
     --bg-banner: #161C21;
-    --line-hover: #FA5E5E;
-    --line-hover-dark: #C84B4B;
+    --bg-banner-second: #663399;
+    --line-hover: #a96dad;
+    --line-hover-dark: #9b59b6;
     --text-bg-primary: #F2F2F2;
+    --text-primary-dark: #252525;
     --bg-white: #FFFFFF;
 }
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&display=swap');
@@ -135,25 +137,30 @@ header nav ul li a:hover:after {
 /** Diseño del main **/
 
 .container main {
-    padding: 2rem 2rem;
+    background: var(--text-bg-primary);
 }
-.container #servicios {
+.container section .separar {
     display: flex;
     align-items: start;
     justify-content: space-between;
+    padding: 2rem;
 }
-.container main article h2.titulo {
-    padding: 0 .5rem;
+.container main section article h2.titulo,
+.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion h2.titulo {
+    color: var(--text-primary-dark);
     font-size: 1.5rem;
     font-weight: 500;
-    border-left: 5px solid var(--bg-primary);
 }
-.container main article {
+.container main section#nuestroTrabajo article h2.titulo {
+    color: var(--bg-white);
+    margin-bottom: 2rem;
+}
+.container main section#servicios article {
     width: 50%;
     padding: 0 2rem;
 }
-.container main article p {
-    padding: 1rem 0;
+.container main section article p {
+    padding: 1.5rem 0;
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.5rem;
@@ -166,4 +173,87 @@ header nav ul li a:hover:after {
     width: 110px;
     display: inline-block;
     margin-right: 1rem;
+}
+.container main section#nuestroTrabajo {
+    background: linear-gradient(45deg, var(--bg-banner) 70%, var(--bg-white));
+    padding: 2rem;
+}
+
+/** estilos del carrusel **/
+
+.container main section#nuestroTrabajo .carrusel_main .carrusel_card {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--bg-white);
+}
+.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_imagen {
+    padding: 2rem;
+    width: 50%;
+}
+.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion {
+    width: 50%;
+}
+.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_imagen img {
+    width: 100%;
+    max-width: 500px;
+}
+.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion h2.titulo {
+    padding-top: 2rem;
+    margin-bottom: 0;
+}
+.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion {
+    padding-right: 2rem;
+}
+.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion .carrusel_tecnologias {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+}
+.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion .bg-tec-base {
+    color: var(--bg-white);
+    padding: .3rem 1.5rem;
+    border-radius: 3px;
+    font-weight: 300;
+    text-align: center;
+    font-size: 14px;
+}
+.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion .carrusel_solicitar {
+    display: flex;
+    justify-content: end;
+    padding: 2rem 0;
+}
+.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion .carrusel_btn_solicitar {
+    background: var(--line-hover);
+    color: var(--text-bg-primary);
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: block;
+    padding: 1rem 3rem;
+    width: 60%;
+    text-align: center;
+    margin-top: 2rem;
+    border-radius: 4px;
+    transition: all .5s ease;
+}
+.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion .carrusel_btn_solicitar:hover {
+    background: var(--line-hover-dark);
+}
+.html {
+    background: #ff5733;
+}
+.css {
+    background: #264de4 ;
+}
+.tailwind {
+    background: #1995d5;
+}
+.js {
+    background: #f0db4f;
+    color: #323330;
+}
+.php {
+    background: #787CB5;
 }
