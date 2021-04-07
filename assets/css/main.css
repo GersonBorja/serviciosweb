@@ -1,22 +1,25 @@
 /** variables del diseño **/
 :root {
-    --bg-primary: #101519;
-    --bg-banner: #161C21;
-    --bg-banner-second: #663399;
-    --line-hover: #a96dad;
-    --line-hover-dark: #9b59b6;
+    --bg-primary: #252525;
+    --bg-banner: rgba(44,44,44, .9);
+    --navbar: #555555;
+    --line-hover: #26c281;
+    --line-hover-dark: #26a65b;
     --text-bg-primary: #F2F2F2;
-    --text-primary-dark: #252525;
     --bg-white: #FFFFFF;
+    --border-light: #DDDDDD;
+    --bg-white-opacity: rgba(255, 255, 255, .3);
+    --bg-white-opacity-nav: rgba(255, 255, 255, .2);
+    --border-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
     outline: none;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /** sistema de filas y columnas grid **/
@@ -36,8 +39,6 @@ html {
 /** Header **/
 header {
     background: var(--bg-primary);
-    position: sticky;
-    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -82,8 +83,28 @@ header nav ul li a:hover:after {
 }
 
 /** diseño del banner principal **/
+.capas {
+    height: 590px;
+    position: relative;
+}
+.capas .imagen_fondo {
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/img/bg2.webp");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
 .container .ban {
-    background: linear-gradient(45deg, var(--bg-banner) 55%, var(--bg-white));
+    background: linear-gradient(45deg, var(--bg-banner) 55%, var(--bg-white-opacity));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
 }
 .container .ban .banner_centrar {
     display: flex;
@@ -138,122 +159,159 @@ header nav ul li a:hover:after {
 
 .container main {
     background: var(--text-bg-primary);
+    padding: 2rem;
 }
+.container main .titulo {
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding: 1.5rem .5rem;
+    position: relative;
+    z-index: 2;
+}
+
+
+/** diseño de las cards de servicios **/
+
 .container section .separar {
     display: flex;
-    align-items: start;
+    align-items: stretch;
     justify-content: space-between;
-    padding: 2rem;
-}
-.container main section article h2.titulo,
-.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion h2.titulo {
-    color: var(--text-primary-dark);
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-.container main section#nuestroTrabajo article h2.titulo {
-    color: var(--bg-white);
-    margin-bottom: 2rem;
+    gap: 0 1rem
 }
 .container main section#servicios article {
-    width: 50%;
-    padding: 0 2rem;
-}
-.container main section article p {
-    padding: 1.5rem 0;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.5rem;
-}
-.main-tecnologias {
+    width: 33.33%;
+    background: var(--bg-white);
+    box-shadow: var(--border-shadow);
+} 
+.container main section#servicios div.separar article .servicios_card {
     display: flex;
-    padding: 2rem 0;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px dashed #ddd;
 }
-.main-tecnologias img {
-    width: 110px;
-    display: inline-block;
-    margin-right: 1rem;
+.container main section#servicios div.separar article .servicios_card img {
+    width: 25%;
+    padding: 1rem;
 }
-.container main section#nuestroTrabajo {
-    background: linear-gradient(45deg, var(--bg-banner) 70%, var(--bg-white));
-    padding: 2rem;
+.container main section#servicios div.separar article .servicios_card h2.servicios_titulo {
+    width: 75%;
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+.container main section#servicios div.separar article p {
+    padding: 1rem 2rem;
+    line-height: 1.6rem;
+    font-size: 1rem;
+}
+.container main section#servicios div.separar article .creadas {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+}
+.container main section#servicios div.separar article .creadas div {
+    padding: .5rem 1rem;
+    color: var(--bg-white);
+    background: var(--line-hover);
+    font-size: .8rem;
+    font-weight: 300;
+    border-radius: 2px;
+    transition: all .8s ease;
+}
+.container main section#servicios div.separar article .creadas div:hover {
+    background: var(--navbar);
 }
 
 /** estilos del carrusel **/
 
-.container main section#nuestroTrabajo .carrusel_main .carrusel_card {
+.container main section#nuestroTrabajo {
+    margin-top: 2rem;
+}
+.container main section#nuestroTrabajo .carrusel_main {
     display: flex;
-    align-items: start;
+    gap: 0 1rem;
     justify-content: space-between;
     width: 100%;
-    background: var(--bg-white);
+    border-radius: 25px;
+    box-shadow: var(--border-shadow);
 }
-.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_imagen {
-    padding: 2rem;
+.carrusel_imagen, .carrusel_descripcion {
     width: 50%;
 }
-.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion {
-    width: 50%;
-}
-.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_imagen img {
+
+.carrusel_imagen img {
     width: 100%;
-    max-width: 500px;
+    max-width: 100%;
 }
-.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion h2.titulo {
-    padding-top: 2rem;
-    margin-bottom: 0;
+.carrusel_descripcion {
+    background:  var(--bg-white);
 }
-.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion {
-    padding-right: 2rem;
+.carrusel_titulo {
+    color: var(--bg-primary);
+    font-weight: 300;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
 }
-.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion .carrusel_tecnologias {
+.carrusel_descripcion p {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 1rem 2rem;
+}
+.card {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 0;
+    width: 70%;
+    background:  var(--bg-white);
 }
-.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion .bg-tec-base {
-    color: var(--bg-white);
-    padding: .3rem 1.5rem;
-    border-radius: 3px;
-    font-weight: 300;
-    text-align: center;
-    font-size: 14px;
+.proyectos {
+    width: 30%;
+    background: var(--bg-primary);
 }
-.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion .carrusel_solicitar {
+.carrusel_buttons {
     display: flex;
+    align-items: center;
     justify-content: end;
-    padding: 2rem 0;
+    padding: 0 2rem;
+    margin-top: 3rem;
 }
-.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion .carrusel_btn_solicitar {
-    background: var(--line-hover);
-    color: var(--text-bg-primary);
-    font-size: 1.3rem;
-    font-weight: 500;
-    display: block;
-    padding: 1rem 3rem;
-    width: 60%;
-    text-align: center;
-    margin-top: 2rem;
-    border-radius: 4px;
-    transition: all .5s ease;
-}
-.container main section#nuestroTrabajo .carrusel_main .carrusel_card .carrusel_descripcion .carrusel_btn_solicitar:hover {
+.btns-carrusel {
+    padding: .8rem 2rem;
     background: var(--line-hover-dark);
+    color: var(--bg-white);
+    border-radius: 2px;
+    transition: all .8s ease;
 }
-.html {
-    background: #ff5733;
+.btns-carrusel:nth-child(1) {
+    margin-right: 1rem;
 }
-.css {
-    background: #264de4 ;
+.btns-carrusel:hover {
+    background: var(--bg-primary);
+    color: var(--bg-white);
 }
-.tailwind {
-    background: #1995d5;
+.carrusel_titulo_navbar {
+    color: var(--bg-white);
+    border-bottom: 1px solid var(--bg-white-opacity-nav);
+    font-weight: 300;
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
 }
-.js {
-    background: #f0db4f;
-    color: #323330;
+.proyectos nav ul {
+    list-style: none;
 }
-.php {
-    background: #787CB5;
+.proyectos nav ul li {
+    border-bottom: 1px dashed var(--bg-white-opacity-nav);
+}
+.proyectos nav ul li a {
+    padding: 1rem 2rem;
+    display: block;
+    color: var(--bg-white);
+    transition: all .8s ease;
+}
+.proyectos nav ul li a:hover {
+    color: var(--line-hover-dark)
 }
