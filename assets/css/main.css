@@ -27,9 +27,7 @@
 body {
     height: 100vh;
 }
-.container {
-    
-}
+
 /** scroll animado **/
 html {
     scroll-behavior: smooth;
