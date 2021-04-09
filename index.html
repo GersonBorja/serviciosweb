@@ -4,42 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
-<body>
+<body id="bodi">
     <div class="container">
-        <header>
-            <h1>LOGOTIPO</h1>
-            <nav>
-                <ul>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#nuestroTrabajo">Nuestro trabajo</a></li>
-                    <li><a href="">Quienes somos</a></li>
-                    <li><a href="">Contactanos</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="capas">
-            <div class="imagen_fondo"></div>
-            <div class="ban">
-                <div class="banner_centrar">
-                    <div class="banner_texto">
-                        <h1>Dos freelancers de diseño de páginas web y desarrollo de apps</h1>
-                        <h2>Digitalizamos tus ideas a lo grande</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae ducimus, ullam, quos
-                            necessitatibus illo optio quo aperiam neque esse ratione deserunt distinctio id temporibus
-                            fugiat? Quas omnis quaerat adipisci nisi?</p>
-                        <a href="#" class="banner_boton_solicitud">Solicita tu presupuesto</a>
-                    </div>
-                    <div class="banner_imagen">
-                        <img src="assets/img/code_banner.svg" alt="banner-code-flaticon">
+        <div class="bloque">
+            <header>
+                <h1>LOGOTIPO</h1> <a href="#" id="menuopen" class="menuopen"><i class="fas fa-bars"></i></a>
+                <nav id="menu">
+                    <ul>
+                        <li><a href="#servicios" class="links_menu"><i class="fas fa-laptop-code"></i> Servicios</a></li>
+                        <li><a href="#nuestroTrabajo" class="links_menu"><i class="fas fa-folder"></i> Nuestro portafolio</a></li>
+                        <li><a href="#aboutme" class="links_menu"><i class="fas fa-user-friends"></i> Quienes somos</a></li>
+                        <li><a href="#contacto" class="links_menu"><i class="fas fa-envelope"></i> Contactanos</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="capas">
+                <div class="imagen_fondo"></div>
+                <div class="ban">
+                    <div class="banner_centrar">
+                        <div class="banner_texto">
+                            <h1>Dos freelancers de diseño de páginas web y desarrollo de apps</h1>
+                            <h2>Digitalizamos tus ideas a lo grande</h2>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae ducimus, ullam, quos
+                                necessitatibus illo optio quo aperiam neque esse ratione deserunt distinctio id temporibus
+                                fugiat? Quas omnis quaerat adipisci nisi?</p>
+                            <a href="#" class="banner_boton_solicitud">Solicita tu presupuesto</a>
+                        </div>
+                        <div class="banner_imagen">
+                            <img src="assets/img/code_banner.svg" alt="banner-code-flaticon">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
 
         <main>
             <section id="servicios">
@@ -56,12 +61,12 @@
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, saepe hic! Impedit
                             dignissimos debitis modi in quidem. Ex vero at ea, harum iure dolorem sed vitae iusto quod
                             praesentium id.</p>
-                            <div class="creadas">
-                                <div>HTML5</div>
-                                <div>CSS3</div>
-                                <div>Tailwind CSS</div>
-                                <div>javascript</div>
-                            </div>
+                        <div class="creadas">
+                            <div>HTML5</div>
+                            <div>CSS3</div>
+                            <div>Tailwind CSS</div>
+                            <div>javascript</div>
+                        </div>
                     </article>
                     <article>
                         <div class="servicios_card">
@@ -71,10 +76,11 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam possimus unde tenetur
                             dolorem ut nam nemo blanditiis expedita accusamus, beatae, labore consectetur veritatis,
                             molestias praesentium aliquam deserunt minima temporibus officiis.</p>
-                            <p>Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit. Quidem eveniet voluptatum similique rerum temporibus
-                        inventore minima ipsa sapiente explicabo reprehenderit, consequatur, tempore accusamus aliquam
-                        magnam sequi quia impedit dolore culpa.</p>
+                        <p>Lorem ipsum dolor
+                            sit amet consectetur adipisicing elit. Quidem eveniet voluptatum similique rerum temporibus
+                            inventore minima ipsa sapiente explicabo reprehenderit, consequatur, tempore accusamus
+                            aliquam
+                            magnam sequi quia impedit dolore culpa.</p>
                         <div class="creadas">
                             <div>HTML5</div>
                             <div>CSS3</div>
@@ -96,18 +102,18 @@
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores quisquam deserunt omnis aut
                             perspiciatis quasi saepe optio fugit? Maxime eveniet, consequatur tempora consectetur
                             assumenda debitis incidunt distinctio odio quaerat eligendi?</p>
-                            <div class="creadas">
-                                <div>C++</div>
-                                <div>Java</div>
-                                <div>Mysql</div>
-                            </div>
+                        <div class="creadas">
+                            <div>C++</div>
+                            <div>Java</div>
+                            <div>Mysql</div>
+                        </div>
                     </article>
                 </div>
             </section>
 
             <!-- section nuestro trabajo -->
             <section id="nuestroTrabajo">
-                <h1 class="titulo">Nuestro trabajo</h1>
+                <h1 class="titulo">Nuestro portafolio</h1>
                 <article>
                     <div class="carrusel_main">
                         <div class="card">
@@ -141,13 +147,99 @@
 
                     </div>
                 </article>
-                <br><br><br><br><br><br><br>
+            </section>
+
+            <!-- secciion quienes somos -->
+            <section id="aboutme">
+                <h1 class="titulo">Quienes somos</h1>
+                <div class="about">
+                    <article>
+                        <h2 class="about_titulo">Developer One</h2>
+                        <h3 class="about_sub_titulo">Que es lo que hago</h3>
+                        <div class="about_imagen">
+                            <img src="assets/pexels-photo-5644431.jpeg">
+                        </div>
+                        <div class="about_skills">
+                            <div>
+                                <h2>Diseño del sitio web</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident fuga quasi
+                                    praesentium fugiat voluptate eum non laudantium laborum impedit officiis ipsam
+                                    doloribus corporis incidunt distinctio consequuntur recusandae, dolore sequi nisi.
+                                </p>
+                            </div>
+                            <div>
+                                <h2>Manejo de servidores</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident fuga quasi
+                                    praesentium fugiat voluptate eum non laudantium laborum impedit officiis ipsam
+                                    doloribus corporis incidunt distinctio consequuntur recusandae, dolore sequi nisi.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article>
+                        <h2 class="about_titulo">Developer One</h2>
+                        <h3 class="about_sub_titulo">Que es lo que hago</h3>
+                        <div class="about_imagen">
+                            <img src="assets/pexels-photo-5644431.jpeg">
+                        </div>
+                        <div class="about_skills">
+                            <div>
+                                <h2>Diseño del sitio web</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident fuga quasi
+                                    praesentium fugiat voluptate eum non laudantium laborum impedit officiis ipsam
+                                    doloribus corporis incidunt distinctio consequuntur recusandae, dolore sequi nisi.
+                                </p>
+                            </div>
+                            <div>
+                                <h2>Manejo de servidores</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident fuga quasi
+                                    praesentium fugiat voluptate eum non laudantium laborum impedit officiis ipsam
+                                    doloribus corporis incidunt distinctio consequuntur recusandae, dolore sequi nisi.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- seccion formulario de contacto -->
+            <section id="contacto">
+                <h1 class="titulo">Formulario de contacto</h1>
+                <div class="contacto">
+                    <form action="" method="POST">
+                        <div class="contacto_form_inputs">
+                            <div class="divisores">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" class="contacto_input" placeholder="Escribe tus nombres">
+                            </div>
+                            <div class="divisores">
+                                <label for="apellido">Apellido:</label>
+                                <input type="text" id="apellido" name="apellido" class="contacto_input" placeholder="Escribe tus apellidos">
+                            </div>
+                            <div class="divisores">
+                                <label for="correo">Correo:</label>
+                                <input type="email" id="correo" name="correo" class="contacto_input" placeholder="Escribe tus apellidos">
+                            </div>
+                            <div class="divisores">
+                                <label for="telefono">Telefono:</label>
+                                <input type="text" id="telefono" name="telefono" class="contacto_input" placeholder="Escribe tus apellidos">
+                            </div>
+                            <div class="contacto_msg">
+                                <span>Mensaje:</span>
+                            <textarea name="mensaje" class="contacto_textarea" placeholder="Escribe tu mensaje..."></textarea>
+                            </div>
+                            <input type="submit" class="contacto_btn" value="Enviar mensaje">
+                            
+                        </div>
+                        
+                    </form>
+                </div>
             </section>
         </main>
-        <footer>
-            <h2>footer</h2>
-        </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

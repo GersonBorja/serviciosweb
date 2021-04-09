@@ -2,7 +2,7 @@
 :root {
     --bg-primary: #252525;
     --bg-banner: rgba(44,44,44, .9);
-    --navbar: #555555;
+    --navbar: #343732;
     --line-hover: #26c281;
     --line-hover-dark: #26a65b;
     --text-bg-primary: #F2F2F2;
@@ -10,6 +10,7 @@
     --border-light: #DDDDDD;
     --bg-white-opacity: rgba(255, 255, 255, .3);
     --bg-white-opacity-nav: rgba(255, 255, 255, .2);
+    --header-opacity-nav: rgba(255, 255, 255, .04);
     --border-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
@@ -27,9 +28,7 @@ body {
     height: 100vh;
 }
 .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
+    
 }
 /** scroll animado **/
 html {
@@ -37,11 +36,15 @@ html {
 }
 
 /** Header **/
+.menuopen {
+    display: none;
+}
 header {
     background: var(--bg-primary);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 header h1 {
     color: var(--text-bg-primary);
@@ -92,6 +95,7 @@ header nav ul li a:hover:after {
     height: 100%;
     background-image: url("/assets/img/bg2.webp");
     background-size: cover;
+    background-attachment: fixed;
     position: absolute;
     top: 0;
     left: 0;
@@ -187,7 +191,7 @@ header nav ul li a:hover:after {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px dashed #ddd;
+    border-bottom: 1px dashed var(--border-light);
 }
 .container main section#servicios div.separar article .servicios_card img {
     width: 25%;
@@ -227,7 +231,9 @@ header nav ul li a:hover:after {
 
 /** estilos del carrusel **/
 
-.container main section#nuestroTrabajo {
+.container main section#nuestroTrabajo,
+.container main section#aboutme,
+.container main section#contacto {
     margin-top: 2rem;
 }
 .container main section#nuestroTrabajo .carrusel_main {
@@ -270,7 +276,7 @@ header nav ul li a:hover:after {
 }
 .proyectos {
     width: 30%;
-    background: var(--bg-primary);
+    background: var(--navbar);
 }
 .carrusel_buttons {
     display: flex;
@@ -299,6 +305,7 @@ header nav ul li a:hover:after {
     font-weight: 300;
     font-size: 1.3rem;
     padding: 1rem 2rem;
+    overflow: hidden;
 }
 .proyectos nav ul {
     list-style: none;
@@ -311,7 +318,373 @@ header nav ul li a:hover:after {
     display: block;
     color: var(--bg-white);
     transition: all .8s ease;
+    overflow: hidden;
 }
 .proyectos nav ul li a:hover {
     color: var(--line-hover-dark)
+}
+
+/** diseño de quienes somos **/
+
+.container main section#aboutme .about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 1rem
+}
+.container main section#aboutme .about article {
+    width: 50%;
+    background: var(--bg-white);
+    box-shadow: var(--border-shadow);
+}
+.container main section#aboutme .about article h2 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 2rem 2rem .5rem 2rem;
+    text-transform: uppercase
+}
+.container main section#aboutme .about article .about_sub_titulo {
+    padding: 0 2rem 1rem 2rem;
+    font-weight: 300;
+    font-size: 1rem;
+    text-transform: uppercase
+}
+.container main section#aboutme .about article .about_imagen {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: var(--border-shadow);
+    overflow: hidden;
+}
+.container main section#aboutme .about article .about_imagen img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+    transform: rotate(0deg) scale(1,1);
+}
+.container main section#aboutme .about article .about_imagen img:hover {
+    transform: rotate(360deg) scale(1.2, 1.2);
+}
+.container main section#aboutme .about article .about_skills {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0 1rem;
+    padding: 1rem;
+}
+.container main section#aboutme .about article .about_skills div {
+    background: rgba(0,0,0, .1);
+    width: 50%;
+    overflow: hidden;
+}
+.container main section#aboutme .about article .about_skills div h2 {
+    font-size: .8rem;
+    font-weight: 600;
+}
+.container main section#aboutme .about article .about_skills p {
+    font-size: .9rem;
+    line-height: 1rem;
+    padding: 1rem 2rem;
+}
+
+/** diseño del formulario de contacto **/
+
+.container main section#contacto .contacto {
+    padding: 2rem 3rem;
+    background: var(--bg-white);
+    box-shadow: var(--border-shadow);
+}
+.container main section#contacto .contacto form .contacto_form_inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.container main section#contacto .contacto form .contacto_form_inputs div.divisores {
+    width: 45%;
+    margin-bottom: 1rem;
+}
+.container main section#contacto .contacto form .contacto_form_inputs div.divisores label,
+.container main section#contacto .contacto form .contacto_form_inputs div.contacto_msg span {
+    color: var(--navbar);
+    padding: 1rem 0;
+    display: block;
+}
+.container main section#contacto .contacto form .contacto_form_inputs div.divisores .contacto_input,
+.container main section#contacto .contacto form .contacto_form_inputs div  .contacto_textarea {
+    border: 0;
+    border-bottom: 1px solid  #cbcbcb;
+    width: 100%;
+    padding: 1rem 1rem 1rem 0;
+}
+.container main section#contacto .contacto form .contacto_form_inputs div  .contacto_textarea {
+    resize: vertical;
+}
+.container main section#contacto .contacto form .contacto_form_inputs div.contacto_msg {
+    width: 100%;
+}
+.container main section#contacto .contacto form .contacto_btn {
+    padding: .7rem 1.5rem;
+    background: var(--line-hover);
+    color: var(--bg-white);
+    text-align: center;
+    font-weight: 300;
+    font-size: 1rem;
+    border-radius: 2px;
+    border: 0;
+    margin-top: 2rem;
+}
+
+
+
+
+
+/** diseño responsivo **/
+@media only screen and (max-width: 600px) {
+
+    /** Header **/
+
+.menuopen {
+    display: inline-block;
+    padding: 2em 1rem;
+    color: var(--bg-white);
+}
+header {
+    display: flex;
+    overflow: auto;
+}
+header h1 {
+    color: var(--text-bg-primary);
+    padding: 2em 1rem;
+    font-size: 1rem;
+}
+
+/** estilos del nav del menu **/
+
+header nav {
+    width: 300px;
+    position: fixed;
+    width: 70%;
+    height: 100%;
+    z-index: 4000;
+    top: 0;
+    left: -70%;
+    transition: all .5s ease;
+    background: var(--bg-primary);
+}
+header nav ul li {
+    display: block;
+    border-bottom: 1px solid var(--header-opacity-nav);
+}
+header nav ul li a {
+    display: block;
+    padding: 1.9rem 1.7rem;
+    color: var(--text-bg-primary);
+    font-size: 1.1rem;
+    position: relative;
+    transition: all 1s ease;
+    overflow: hidden;
+}
+
+/** linea del hover de las anclas del nav **/
+header nav ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: 1.2rem;
+    left: 1.5rem;
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--line-hover);
+    transition: width .6s ease;
+}
+header nav ul li a:hover:after {
+    width: 70%;
+}
+
+/** diseño del banner principal **/
+.capas {
+    height: 450px;
+    position: relative;
+    z-index: 3000;
+}
+.container .ban .banner_centrar .banner_texto {
+    width: 100%;
+    padding: 1em;
+}
+.container .ban .banner_centrar .banner_texto h1 {
+    font-size: 1.4em;
+    line-height: 1.4em;
+}
+.container .ban .banner_centrar .banner_texto h2 {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: .5em 0;
+}
+.container .ban .banner_centrar .banner_texto p {
+    font-size: 1em;
+    line-height: 2em;
+    margin-bottom: 0;
+}
+.container .ban .banner_centrar .banner_imagen {
+    display: none;
+}
+.container .ban .banner_centrar .banner_texto a.banner_boton_solicitud {
+    font-size: 1.1em;
+    display: block;
+    padding: 1em 3em;
+    width: auto;
+    text-align: center;
+    margin-top: 2em;
+    border-radius: 4px;
+    transition: all .5s ease;
+}
+.container .ban .banner_centrar .banner_texto a.banner_boton_solicitud:hover {
+    background: var(--line-hover-dark);
+}
+
+/** Diseño del main **/
+
+.container main {
+    padding: 1rem;
+}
+.container main .titulo {
+    font-size: 1.3em;
+    font-weight: 300;
+    padding: 1.5em .5em;
+}
+
+/** diseño de las cards de servicios **/
+
+.container section .separar {
+    display: block;
+}
+.container main section#servicios article {
+    width: 100%;
+    margin-bottom:  1em;
+} 
+.container main section#servicios div.separar article .servicios_card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--border-light);
+}
+.container main section#servicios div.separar article .servicios_card img {
+    width: 30%;
+}
+.container main section#servicios div.separar article .servicios_card h2.servicios_titulo {
+    width: 70%;
+}
+.container main section#servicios div.separar article p {
+    padding: .5em 2em;
+    line-height: 1.5em;
+    font-size: 1em;
+}
+.container main section#servicios div.separar article .creadas {
+    margin-top: 0;
+    flex-wrap: wrap;
+    gap: .3rem;
+}
+.container main section#servicios div.separar article .creadas div {
+    color: var(--navbar);
+    background: var(--bg-white);
+    border: 1px solid var(--bg-primary);
+}
+.container main section#servicios div.separar article .creadas div:hover {
+    background: var(--bg-primary);
+    color: var(--bg-white);
+}
+
+/** estilos del carrusel **/
+
+.container main section#nuestroTrabajo,
+.container main section#aboutme,
+.container main section#contacto {
+    margin-top: 0em;
+}
+.container main section#nuestroTrabajo .carrusel_main {
+    display: grid;
+    grid-gap: 3em;
+    grid-template-rows: auto auto;
+    border-radius: 0;
+    box-shadow: none;
+}
+.carrusel_imagen, .carrusel_descripcion {
+    width: 100%;
+}
+.carrusel_imagen {
+    margin-bottom: 1em;
+    border-bottom: 1px solid var(--border-light);
+}
+.carrusel_imagen img {
+    width: 100%;
+    max-width: 100%;
+}
+.carrusel_titulo {
+    color: var(--bg-primary);
+    font-weight: 300;
+    font-size: 1.5em;
+    padding: .5em 1.1em;
+}
+.carrusel_descripcion p {
+    padding: .5em 2rem;
+}
+.card {
+    display: block;
+    width: 100%;
+}
+.proyectos {
+    grid-row-start: 1;
+    width: 100%;
+}
+.carrusel_buttons {
+    display: block;
+    padding: 2rem;
+    margin-top: 0;
+}
+
+
+/** diseño de quienes somos **/
+
+.container main section#aboutme .about {
+    display: block;
+}
+.container main section#aboutme .about article {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.container main section#aboutme .about article .about_sub_titulo {
+    font-size: .85em;
+}
+.container main section#aboutme .about article .about_imagen {
+    width: 175px;
+    height: 175px;
+}
+.container main section#aboutme .about article .about_imagen img {
+    height: 175px;
+}
+.container main section#aboutme .about article .about_skills {
+    display: block;
+}
+.container main section#aboutme .about article .about_skills div {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+
+/** diseño del formulario de contacto **/
+
+.container main section#contacto .contacto {
+    padding: 2em;
+}
+.container main section#contacto .contacto form .contacto_form_inputs {
+    display: block;
+}
+.container main section#contacto .contacto form .contacto_form_inputs div.divisores {
+    width: 100%;
+}
 }
