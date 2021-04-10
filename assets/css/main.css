@@ -448,7 +448,7 @@ header nav ul li a:hover:after {
 .container footer .footer_title {
     color: var(--bg-white);
     font-size: 1.1rem;
-    font-weight: 300;;
+    font-weight: 300;
 }
 .container footer .footer_redes {
     display: flex;
