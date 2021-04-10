@@ -436,8 +436,43 @@ header nav ul li a:hover:after {
     margin-top: 2rem;
 }
 
+/** diseño del footer **/
 
-
+.container footer {
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 4rem;
+}
+.container footer .footer_title {
+    color: var(--bg-white);
+    font-size: 1.1rem;
+    font-weight: 300;;
+}
+.container footer .footer_redes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 1rem;
+}
+.container footer .footer_redes .footer_links_redes {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    line-height: 40px;
+    text-align: center;
+    color: var(--line-hover);
+    border: 1px solid var(--line-hover);
+    border-radius: 50%;
+    transition: all .7s ease;
+}
+.container footer .footer_redes .footer_links_redes:hover {
+    transform: rotate(360deg) scale(1.2, 1.2);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--bg-primary) var(--line-hover);
+}
 
 
 /** diseño responsivo **/
@@ -643,8 +678,6 @@ header nav ul li a:hover:after {
     padding: 2rem;
     margin-top: 0;
 }
-
-
 /** diseño de quienes somos **/
 
 .container main section#aboutme .about {
@@ -684,5 +717,22 @@ header nav ul li a:hover:after {
 }
 .container main section#contacto .contacto form .contacto_form_inputs div.divisores {
     width: 100%;
+}
+
+/** diseño del footer **/
+
+.container footer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding: 2rem 2.5rem;
+}
+.container footer .footer_title {
+    font-size: 1rem;
+    border-top: 1px solid var(--header-opacity-nav);
+    padding-top: 1rem;
+}
+.container footer .footer_redes {
+    grid-row-start: 1;
+    padding-bottom: 1rem;
 }
 }
